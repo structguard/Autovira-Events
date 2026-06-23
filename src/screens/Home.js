@@ -9,33 +9,44 @@ import Footer from './Footer'
 import Reviews from './Reviews'
 
 const Home = () => {
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <div>
 
-            <Header />
+            <Header scrollTo={scrollToSection}/>
 
-            <section id="Landingscreen">
-                <Landingscreen />
+            <section id="Landingscreen" >
+                <Landingscreen scrollTo={scrollToSection} />
             </section>
 
             <section id="About">
-                <About />
+                <About scrollTo={scrollToSection}/>
             </section>
 
             <section id="whatwedo">
-                <WhatWeDo />
+                <WhatWeDo scrollTo={scrollToSection}/>
             </section>
 
             <section id="Services">
-                <Services />
+                <Services scrollTo={scrollToSection}/>
             </section>
 
-             <section id="Reviews">
-                <Reviews />
+            <section id="Reviews">
+                <Reviews scrollTo={scrollToSection}/>
             </section>
 
             <section id="Contact">
-                <Contact />
+                <Contact scrollTo={scrollToSection} />
             </section>
 
             <Footer />
